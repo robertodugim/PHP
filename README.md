@@ -1,6 +1,6 @@
 # Forensic Services/Complaints Phonegap APP and PHP JSONP WEBSERVICE - FreeLancer Job
 
-### "All projects or parts of then posted in GIT was made all by me, those parts made someone else was marked. Of course, there are libraries as libraries like Jquery, Angular, PHPMailer."
+### "All projects or parts of then posted in GIT was made all by me, those parts made someone else was marked. Of course, there are libraries as Jquery, Angular, PHPMailer."
 
 It was made in august 2015. The company had a Forensic Services/Complaints management system which was builded by a thind party company. They ask me to build a Private PhoneGap app to allowed users/workers to send to their companies Complaints or Accusations against a(n) person(s).  
 
