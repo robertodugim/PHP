@@ -1,0 +1,129 @@
+<div class="primary-well container-fluid">
+	<div class="table-responsive">
+	  <form name="case_form" ng-submit="createCase.submit()" novalidate>
+	  <input type="hidden" name="protocolo" ng-model="createCase.ccase.protocolo">
+	  <input type="hidden" name="id_pergunta" ng-model="createCase.ccase.pergunta_id">
+	  <input type="hidden" name="risco" ng-model="createCase.ccase.risco">
+	  <input type="hidden" name="status" ng-model="createCase.ccase.status">
+	  <input type="hidden" name="canal" ng-model="createCase.ccase.canal">
+		<table class="table table-striped">
+		<tbody>
+		  <tr>
+			<td>{{labels.lbl_id_local}}</td>
+			<td>{{labels.lbl_indentificar}}</td>
+		  </tr>
+		   <tr>
+			<td>
+				<select class="form-control" required="required" name="local" ng-model="createCase.ccase.local">
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="local in createCase.settings.locais" value="{{local.value}}">{{local.label}}</option>
+				</select>
+			</td>
+			<td>
+				<select ng-change="createCase.RequiredIdentification()" class="form-control" required="required" id="identificar" ng-model="createCase.ccase.identificar">
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="indent in createCase.settings.indentificar" value="{{indent.value}}">{{indent.label}}</option>
+				</select>
+			</td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td>{{labels.lbl_nome_denunciante}}</td>
+			<td>{{labels.lbl_email_denunciante}}</td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td><input id="nome" ng-model="createCase.ccase.nome" class="form-control" autocomplete="off" name="nome" type="text" placeholder="{{labels.lbl_nome_denunciante}}"></td>
+			<td><input id="email" ng-model="createCase.ccase.email" class="form-control" autocomplete="off" name="email" type="email" placeholder="E-mail"></td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td>{{labels.lbl_tipo_denunciante}}</td>
+			<td>{{labels.lbl_id_cargo}}</td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td>
+				<select class="form-control" name="tipo_denunciante" ng-model="createCase.ccase.tipo_denunciante" >
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="tipoD in createCase.settings.tipo_denunciante" value="{{tipoD.value}}">{{tipoD.label}}</option>
+				</select>
+			</td>
+			<td>
+				<select class="form-control" name="id_cargo" ng-model="createCase.ccase.id_cargo" >
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="cargo in createCase.settings.cargos" value="{{cargo.value}}">{{cargo.label}}</option>
+				</select>
+			</td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td>{{labels.lbl_telefone}}</td>
+			<td>{{labels.lbl_nr_documento}}</td>
+		  </tr>
+		  <tr ng-show="createCase.GetIdentification()">
+			<td><input id="telefone" class="form-control" autocomplete="off" name="telefone" type="text" placeholder="00000000"></td>
+			<td><input id="nr_documento" class="form-control" autocomplete="off" name="nr_documento" type="text" placeholder="XX000"></td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_categoria}}</td>
+			<td>{{labels.lbl_subcategoria}}</td>
+		  </tr>
+		  <tr>
+			<td>
+				<select class="form-control" required="required" name="categoria" ng-model="createCase.ccase.categoria" >
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="categoria in createCase.settings.categorias" value="{{categoria.value}}">{{categoria.label}}</option>
+				</select>
+			</td>
+			<td>
+				<select class="form-control" required="required" name="subcategoria" ng-disabled="createCase.SubCategoriaDisable()" ng-change="createCase.SelectSubC()" ng-model="createCase.ccase.subcategoria" >
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="subcategoria in createCase.settings.subcategorias[createCase.ccase.categoria]" value="{{subcategoria.value}}">{{subcategoria.label}}</option>
+				</select>
+			</td>
+		  </tr>
+		  <tr>
+			<td colspan="2" ng-bind-html="createCase.settings.conteudo">{{case.lbl_descricao}}</td>
+		  </tr>
+		  <tr>
+			<td colspan="2">{{labels.lbl_descricao}}</td>
+		  </tr>
+		  <tr>
+			<td colspan="2"><textarea rows="5" required="required" class="form-control" name="descricao" ng-model="createCase.ccase.descricao"></textarea></td>
+		  </tr>
+		  <tr ng-hide="false">
+			<td colspan="2">{{labels.lbl_anexo}}</td>
+		  </tr>
+		  <tr ng-hide="false">
+			<td colspan="2"><input type="file" name="anexo" onchange="angular.element(this).scope().SelectFile('anexo',this)"></td>
+		  </tr>
+		  <tr ng-hide="false">
+			<td colspan="2">{{labels.lbl_anexo2}}</td>
+		  </tr>
+		  <tr ng-hide="false">
+			<td colspan="2"><input type="file" name="anexo2" onchange="angular.element(this).scope().SelectFile('anexo1',this)"></td>
+		  </tr>
+		   <tr ng-hide="false">
+			<td colspan="2">{{labels.lbl_anexo3}}</td>
+		  </tr>
+		  <tr ng-hide="false">
+			<td colspan="2"><input type="file" name="anexo3" onchange="angular.element(this).scope().SelectFile('anexo2',this)"></td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_mobile_salvar_prot}}</td>
+		  </tr>
+		  <tr>
+			<td>
+				<select class="form-control" required="required" id="armazenar" ng-model="createCase.ccase.armazenar">
+					<option selected value=''>{{labels.lbl_selecione_combo}} >></option>
+					<option ng-repeat="indent in createCase.settings.indentificar" value="{{indent.value}}">{{indent.label}}</option>
+				</select>
+			</td>
+		  </tr>
+		  <tr ng-show="!createCase.ValidForm()">
+			<td colspan="2"><p class="text-center" style="color:#FF0000;"><span>{{labels.lbl_mobile_preenchimento}}</span><p></td>
+		  </tr>
+		  <tr>
+			<td colspan="2"><button ng-disabled="!createCase.ValidForm()" class="btn btn-default btn-success btn-fluid" type="submit">{{labels.lbl_botao_salvar}}</button></td>
+		  </tr>
+		</tbody>
+	  </table>
+	  </form>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<!-- Footer Section -->
+<div class="pull-right collapse-footer" ng-class="{'collapse-footer-up':!tab.collapse}">
+	<span class="glyphicon double-font" ng-class="{'glyphicon-collapse-down':tab.collapse,'glyphicon-collapse-up':!tab.collapse}" ng-click="tab.footerCollapse();"></span>
+</div>
+<footer class="footer-tab" ng-show="tab.collapse">
+	
+	<div class="grid">
+		
+		<div id="CreateTab" class="col-xs-3">
+		</div>
+		<div id="SeachTab" class="col-xs-3">
+		</div>
+		<div id="CodTab" class="col-xs-2">
+		</div>
+		<div id="RstC" class="col-xs-2">
+		</div>
+		<div id="TutRst" class="col-xs-2">
+		</div>
+		
+		<div class="col-xs-3 text-center tab-footer" ng-class="{active:createPage||createCasePage}"  ng-click="redirectTab('createPage')">
+			<span class="glyphicon glyphicon-plus tab-box" ></span>
+		</div>
+		<div class="col-xs-3 text-center tab-footer" ng-class="{active:protocolsPage}" ng-click="redirectTab('protocolsPage')">
+			<span class="glyphicon glyphicon-search tab-box"></span>
+		</div>
+		<div class="col-xs-2 text-center tab-footer" ng-click="tab.OpenUrl(tab.conduta)">
+			<span class="glyphicon glyphicon-download tab-box"></span>
+		</div>
+		<div class="col-xs-2 text-center tab-footer" ng-click="ResetCompany()">
+			<span class="glyphicon glyphicon-transfer tab-box"></span>
+		</div>
+		<div class="col-xs-2 text-center tab-footer" ng-click="Tutorial();">
+			<span class="glyphicon glyphicon-list-alt tab-box"></span>
+		</div>
+	</div>
+	
+</footer>

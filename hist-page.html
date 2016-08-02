@@ -1,0 +1,40 @@
+<div id="ListHistory" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" sty>
+
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">{{labels.lbl_historico}}</h4>
+	  </div>
+	  <div class="modal-body" >
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<thead>
+				  <tr>
+					<th>{{labels.lbl_descricao}}</th>
+					<th>{{labels.lbl_anexo}}</th>
+					<th>{{labels.lbl_anexo2}}</th>
+					<th>{{labels.lbl_anexo3}}</th>
+					<th>{{labels.lbl_data_alteracao}}</th>
+				  </tr>
+				</thead>
+				<tbody ng-show="true">
+				  <tr ng-repeat="hist in CtrlHistory.histories">
+					<td><textarea style='width:90%;min-width:250px;' rows="4" disabled>{{hist.descricao}}</textarea></td>
+					<td><a href="#" ng-click="CtrlHistory.OpenUrl(hist.link_anexo)">{{hist.anexo}}<a></td>
+					<td><a href="#" ng-click="CtrlHistory.OpenUrl(hist.link_anexo_2)">{{hist.anexo_2}}<a></td>
+					<td><a href="#" ng-click="CtrlHistory.OpenUrl(hist.link_anexo_3)">{{hist.anexo_3}}<a></td>
+					<td>{{hist.data_alteracao}}</td>
+				  </tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default btn-danger" data-dismiss="modal">&times;</button>
+	</div>
+	</div>
+
+  </div>
+</div>

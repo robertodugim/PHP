@@ -1,0 +1,27 @@
+<div class="primary-well container-fluid">
+	<div class="grid">
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 class="text-center almost-black-color">Digite o nome abreviado da Empresa</h1>
+			</div>
+		</div>
+	</div>
+	<hr />
+	<div class="grid">
+		<div class="row">
+			<div class="col-xs-9" id="search">
+				</i><input required placeholder="Search"  ng-model="Company.keyword" class="form-control keywordSearch" tabindex="1" style="position: relative; background-color: transparent;">
+			</div>
+			<div class="col-xs-3">
+				<button class="btn btn-default btn-primary" ng-click="Company.SearchCompany();"><span class="glyphicon glyphicon-search"></span></button>
+			</div>
+		</div>
+	</div>
+	<div class="grid">
+		<div class="row">
+			<div class="col-xs-12">
+			{{Company.name}}
+			</div>
+		</div>
+	</div>
+</div>

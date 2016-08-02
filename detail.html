@@ -1,0 +1,74 @@
+<div class="primary-well container-fluid">
+	<div class="table-responsive">
+	  <h2>{{labels.lbl_relato}}: {{case.protocol.protocolo}}</h2>
+		<table class="table table-striped">
+		<tbody>
+		  <tr>
+			<td>{{labels.lbl_protocolo}}</td>
+			<td>{{labels.lbl_status}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.protocolo}}</td>
+			<td>{{case.protocol.status}}</td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_canal}}</td>
+			<td>{{labels.lbl_id_local}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.canal}}</td>
+			<td>{{case.protocol.id_local}}</td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_nome_denunciante}}</td>
+			<td>{{labels.lbl_email_denunciante}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.nome}}</td>
+			<td>{{case.protocol.email}}</td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_tipo_denunciante}}</td>
+			<td>{{labels.lbl_id_cargo}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.tipo_denunciante}}</td>
+			<td>{{case.protocol.id_cargo}}</td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_telefone}}</td>
+			<td>{{labels.lbl_nr_documento}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.telefone}}</td>
+			<td>{{case.protocol.nr_documento}}</td>
+		  </tr>
+		  <tr>
+			<td>{{labels.lbl_categoria}}</td>
+			<td>{{labels.lbl_subcategoria}}</td>
+		  </tr>
+		  <tr>
+			<td>{{case.protocol.categoria}}</td>
+			<td>{{case.protocol.subcategoria}}</td>
+		  </tr>
+		  <tr>
+			<td colspan="2">{{labels.lbl_descricao}}</td>
+		  </tr>
+		  <tr>
+			<td colspan="2"><textarea disabled="" rows="5" class="form-control" id="denuncias_descricao">{{case.protocol.descricao}}</textarea></td>
+		  </tr>
+		  
+		</tbody>
+	  </table>
+	</div>
+	<div class="grid">
+		<div class="col-xs-6">
+			<button class="btn btn-default btn-primary btn-fluid" ng-click="case.OpenHistory()"><span class="double-font">{{labels.lbl_historico}}</span></button>
+		</div>
+		<div class="col-xs-6">
+			<button class="btn btn-default btn-primary btn-fluid" ng-click="case.OpenCreateHistory()"><span class="double-font">{{labels.lbl_botao_criar_historico}}</span></button>
+		</div>
+	</div>
+	<hist-modal></hist-modal>
+	<create-hist-modal></create-hist-modal>
+</div>

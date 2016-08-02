@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "XXXXXXXX"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>[Company Name] APP</name>
+
+    <description>
+        linha ética. 
+    </description>
+
+    <author href="https://www.cbrconsultoria.com.br" email="roberto@cbrconsultoria.com.br">
+        Roberto Dugim
+    </author>
+	<content src="index.html"/>
+	<icon src="icon.png"/>
+	<preference name="permissions" value="none"/>
+	<preference name="orientation" value="default"/>
+	<preference name="target-device" value="universal"/>
+	<preference name="fullscreen" value="false"/>
+	
+	<preference name="webviewbounce" value="true"/>
+	<preference name="prerendered-icon" value="true"/>
+	<preference name="stay-in-webview" value="false"/>
+	<preference name="ios-statusbarstyle" value="black-opaque"/>
+	<preference name="detect-data-types" value="true"/>
+	<preference name="exit-on-suspend" value="false"/>
+	<preference name="show-splash-screen-spinner" value="true"/>
+	<preference name="auto-hide-splash-screen" value="true"/>
+	<preference name="disable-cursor" value="false"/>
+	<preference name="android-minSdkVersion" value="7"/>
+	<preference name="android-installLocation" value="auto"/>
+	<gap:plugin name="org.apache.cordova.inappbrowser" source="npm"/>
+	<gap:plugin name="cordova-plugin-whitelist" source="npm"/>
+	<allow-navigation href="*://*.cbrle.com.br/*" />
+	<access origin="*://*.cbrle.com.br/*" />
+	<allow-intent href="*://*.cbrle.com.br/*" />
+	<platform name="android">
+		<!-- you can use any density that exists in the Android project -->
+		<splash src="res/screen/android/screen-hdpi-landscape.png" density="land-hdpi"/>
+		<splash src="res/screen/android/screen-ldpi-landscape.png" density="land-ldpi"/>
+		<splash src="res/screen/android/screen-mdpi-landscape.png" density="land-mdpi"/>
+		<splash src="res/screen/android/screen-xhdpi-landscape.png" density="land-xhdpi"/>
+
+		<splash src="res/screen/android/screen-hdpi-portrait.png" density="port-hdpi"/>
+		<splash src="res/screen/android/screen-ldpi-portrait.png" density="port-ldpi"/>
+		<splash src="res/screen/android/screen-mdpi-portrait.png" density="port-mdpi"/>
+		<splash src="res/screen/android/screen-xhdpi-portrait.png" density="port-xhdpi"/>
+	</platform>
+
+	<platform name="ios">
+		<!-- images are determined by width and height. The following are supported -->
+		<splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480"/>
+		<splash src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
+		<splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024"/>
+		<splash src="res/screen/ios/screen-ipad-portrait-2x" width="1536" height="2048"/>
+		<splash src="res/screen/ios/screen-ipad-landscape.png" width="1024" height="768"/>
+		<splash src="res/screen/ios/screen-ipad-landscape-2x.png" width="2048" height="1536"/>
+		<splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136"/>
+		<splash src="res/screen/ios/screen-ipad-portrait.png" width="750" height="1334"/>
+	</platform>
+</widget>

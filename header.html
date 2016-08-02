@@ -1,0 +1,13 @@
+<!-- Header Section -->
+<div class="header-tab-box">
+</div>
+<div class="header-tab">
+	<div class="container-fluid">
+		<div class="col-xs-6 text-left img-box pull-right text-right" ng-click="redirectTab('homeShow')">
+			<img src="{{Ctrlheader.icon}}" class="tab-box" >
+		</div>
+		<div class="col-xs-2 text-center language-header pull-right text-right" ng-repeat="lang in Ctrlheader.languages">
+			<img id="LangPop" ng-click="tab.SetLanguage(lang.lng)" src="{{lang.image}}"></img>
+		</div>
+	</div>
+</div>

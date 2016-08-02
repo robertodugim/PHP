@@ -1,0 +1,58 @@
+<div id="IncludeHist" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" sty>
+
+	<!-- Modal content-->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">{{labels.lbl_botao_criar_historico}}</h4>
+	  </div>
+	  <div class="modal-body" >
+			<div class="table-responsive">
+			  <form name="hist_form" ng-submit="createHist.submit()" novalidate>
+				<table class="table table-striped">
+				<tbody>
+				  <tr>
+					<td >{{labels.lbl_descricao}}</td>
+				  </tr>
+				  <tr>
+					<td ><textarea rows="5" required="required" class="form-control" name="descricao" ng-model="createHist.hist.descricao"></textarea></td>
+				  </tr>
+				  <tr ng-hide="false">
+					<td >{{labels.lbl_anexo}}</td>
+				  </tr>
+				  <tr ng-hide="false">
+					<td ><input type="file" name="anexo" onchange="angular.element(this).scope().SelectFile('anexo',this)"></td>
+				  </tr>
+				  <tr ng-hide="false">
+					<td >{{labels.lbl_anexo2}}</td>
+				  </tr>
+				  <tr ng-hide="false">
+					<td ><input type="file" name="anexo2" onchange="angular.element(this).scope().SelectFile('anexo1',this)"></td>
+				  </tr>
+				   <tr ng-hide="false">
+					<td >{{labels.lbl_anexo3}}</td>
+				  </tr>
+				  <tr ng-hide="false">
+					<td ><input type="file" name="anexo3" onchange="angular.element(this).scope().SelectFile('anexo2',this)"></td>
+				  </tr>
+				  <tr ng-show="!hist_form.$valid">
+					<td ><p class="text-center" style="color:#FF0000;"><span>{{labels.lbl_mobile_preenchimento}}.</span><p></td>
+				  </tr>
+				  <tr>
+					<td ><button ng-disabled="!hist_form.$valid" class="btn btn-default btn-success btn-fluid" type="submit">{{labels.lbl_botao_salvar}}</button></td>
+				  </tr>
+				</tbody>
+			  </table>
+			  </form>
+			</div>
+	  </div>
+	  <div class="modal-footer">
+		<div class="text-center">
+			
+		</div>
+	  </div>
+	</div>
+
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="primary-well container-fluid">
+	<div class="table-responsive">
+	  <h2>{{labels.lbl_acompanhar_relato}}</h2>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+			<th></th>
+			<th>{{labels.lbl_protocolo}}</th>
+			<th>{{labels.lbl_categoria}}</th>
+			<th>{{labels.lbl_subcategoria}}</th>
+			<th>{{labels.lbl_status}}</th>
+			<th>{{labels.lbl_data_criacao}}</th>
+		  </tr>
+		</thead>
+		<tbody ng-hide="haveProtocols">
+		  <tr>
+			<td colspan="5">{{labels.lbl_msg_prot_nao_encontrado}}</td>
+		  </tr>
+		</tbody>
+		<tbody ng-show="haveProtocols">
+		  <tr ng-repeat="denuncia in yourProtocols track by $index | orderBy:'protocolo'">
+			<td><a ng-click="protocol.DetailProtocol(denuncia.protocolo)" protocolo="{{denuncia.protocolo}}">{{labels.lbl_btn_acessar}}</a></td>
+			<td>{{denuncia.protocolo}}</td>
+			<td>{{denuncia.categoria}}</td>
+			<td>{{denuncia.subcategoria}}</td>
+			<td>{{denuncia.status}}</td>
+			<td>{{denuncia.data_criacao}}</td>
+		  </tr>
+		</tbody>
+	  </table>
+	  </div>
+	<div>
+		<button class="btn btn-default btn-primary btn-fluid" ng-click="protocol.IncludeProtocol()"><span class="double-font">{{labels.lbl_mobile_incluir_prot}}</span></button>
+	</div>
+	<add-modal></add-modal>
+</div>

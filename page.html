@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="linhaetica">
+<head>
+	<meta charset="UTF-8">
+	<title>XXXX</title>
+	<script src="phonegap.js"></script>
+	<script src="jquery/jquery.js"></script>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="mycss/primary-well.css">
+	<link rel="stylesheet" href="mycss/font-size.css">
+	<link rel="stylesheet" href="mycss/font-size.css">
+	<link rel="stylesheet" href="load-plugin/load-plugin.css">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="Primary as CtrlCompany">
+	<style> <item name="android:windowTranslucentStatus">true</item></style>
+	<header-tab></header-tab>
+	<home-tab ng-show="homeShow"></home-tab>
+	<protocol-tab ng-show="protocolsPage"></protocol-tab>
+	<detail-tab ng-show="details"></detail-tab>
+	<create-page-tab ng-show="createPage"></create-page-tab>
+	<create-case-tab ng-show="createCasePage"></create-case-tab>
+	<pos-save-tab ng-show="posSave"></pos-save-tab>
+	<footer-tab></footer-tab>
+	<div class="modal-load"><!-- Place at bottom of page --></div>
+	<script type="text/javascript" src="deviceReady.js"></script>
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript" src="js/protocols.js"></script>
+	<script type="text/javascript" src="js/add-modal.js"></script>
+	<script type="text/javascript" src="js/detail.js"></script>
+	<script type="text/javascript" src="js/hist-page.js"></script>
+	<script type="text/javascript" src="js/create-page.js"></script>
+	<script type="text/javascript" src="js/create-case.js"></script>
+	<script type="text/javascript" src="js/create-hist.js"></script>
+	<script type="text/javascript" src="js/posSave.js"></script>
+	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/footer.js"></script>
+</body>
+</html>
